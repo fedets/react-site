@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ContactsPage from "./pages/contacts";
+import PostsPage from "./pages/posts";
 
 import "bootstrap/dist/css/bootstrap.css"
 
@@ -20,6 +21,9 @@ class App extends React.Component {
                                 <a className="nav-link" href="/about">About</a>
                             </li>
                             <li className="nav-item">
+                                <a className="nav-link" href="/Posts">Posts</a>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link" href="/contacts">Contacts</a>
                             </li>
                         </ul>
@@ -29,6 +33,7 @@ class App extends React.Component {
                     <Route exact path={"/"} component={HomePage}/>
                     <Route exact path={"/about"} component={AboutPage}/>
                     <Route exact path={"/contacts"} component={ContactsPage}/>
+                    <Route exact path={"/posts"} component={PostsPage}/>
 
                 </Router>
             </div>
