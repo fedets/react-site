@@ -4,8 +4,8 @@ import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ContactsPage from "./pages/contacts";
 import PostsPage from "./pages/posts";
-
-import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css";
+import PostDetail from "./pages/posts/PostDetail";
 
 class App extends React.Component {
     render() {
@@ -21,7 +21,7 @@ class App extends React.Component {
                                 <a className="nav-link" href="/about">About</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/Posts">Posts</a>
+                                <a className="nav-link" href="/posts">Posts</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/contacts">Contacts</a>
@@ -33,7 +33,8 @@ class App extends React.Component {
                     <Route exact path={"/"} component={HomePage}/>
                     <Route exact path={"/about"} component={AboutPage}/>
                     <Route exact path={"/contacts"} component={ContactsPage}/>
-                    <Route exact path={"/posts"} component={PostsPage}/>
+                    <Route path={"/posts"} component={PostsPage}/>
+                    <Route exact path={`/post-details/:postId`} component={PostDetail}></Route>
 
                 </Router>
             </div>

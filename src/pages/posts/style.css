@@ -1,3 +1,18 @@
 img {
     object-fit: cover;
+    max-width: 100%;
+}
+.card-body {
+    color: #000;
+}
+.card-body p {
+    margin: 0;
+}
+.card-title {
+    font-size: 20px;
+}
+.post-content img {
+    object-fit: none;
+    height: auto;
+    width: auto;
 }

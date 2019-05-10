@@ -1,10 +1,11 @@
 import React from "react";
+import PostList from "./PostList";
 import "./style.css";
 
 const Posts = () => (
     <div>
         <h1>Posts</h1>
-        <ul className="row list-unstyled">
+        {/*<ul className="row list-unstyled">
             <li className="col-md-4 col-sm-6 col-xs-12 mb-2">
                 <div className="card">
                     <h2 className="card-header">Title</h2>
@@ -59,7 +60,8 @@ const Posts = () => (
                     </div>
                 </div>
             </li>
-        </ul>
+        </ul>*/}
+        <PostList/>
     </div>
 )
 
