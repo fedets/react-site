@@ -30,7 +30,7 @@ class PostDetail extends Component {
                         <li className="breadcrumb-item">
                             <Link to="/posts">All posts</Link>
                         </li>
-                        <li className="breadcrumb-item active" aria-current="page"></li>
+                        <li className="breadcrumb-item active" aria-current="page">{postTitle}</li>
                     </ol>
                 </nav>
 
