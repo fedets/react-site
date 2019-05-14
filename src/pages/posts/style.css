@@ -16,3 +16,6 @@ img {
     height: auto;
     width: auto;
 }
+.page-link {
+    cursor: pointer;
+}

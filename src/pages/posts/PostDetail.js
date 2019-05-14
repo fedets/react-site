@@ -9,13 +9,11 @@ class PostDetail extends Component {
     }
 
     componentWillMount() {
-        const posts = fetch(this.state.siteUrl + this.state.postsUrl).then(function(response){
+        fetch(this.state.siteUrl + this.state.postsUrl).then(function(response){
             return response.json();
         }).then(responseBody => {
             this.setState({
                 postDetails: responseBody
-            },function(){
-                console.log(responseBody.title.rendered);
             })
         })
     }

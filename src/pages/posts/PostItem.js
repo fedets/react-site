@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import PostDetail from "./PostDetail";
+import { Link } from "react-router-dom";
 
 class PostItem extends Component {
     componentDidMount() {
@@ -10,7 +9,6 @@ class PostItem extends Component {
 
     render() {
         const {postInfo} = this.props;
-        let postDetailUrl = "/posts/post-details";
 
         return (
 

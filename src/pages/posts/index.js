@@ -3,8 +3,6 @@ import PostList from "./PostList";
 import Pagination from "./Pagination"
 import "./style.css";
 
-
-
 class Posts extends Component {
     state = {
         pagerNumber: null,
@@ -15,24 +13,17 @@ class Posts extends Component {
     }
 
     componentWillMount(nextProps, nextState, nextContext) {
-        // if(this.state == nextState) { return; }
-        console.log("componentWillMount");
         this.getNewData();
     }
-
-    // componentWillUpdate(nextProps, nextState, nextContext) {
-    //     if(this.state.postsPagemarker != nextState.postsPagemarker) {
-    //         console.log("componentWillUpdate");
-    //         this.getNewData();
-    //     }
-    // }
 
     render() {
         return (
             <div>
                 <h1>Posts</h1>
                 <PostList postList = {this.state.postList} pageNumber = {this.getPagerNumber} />
-                <Pagination onCurrentPageChange = {this.handleChangeCurrentPage} pagerNumber = {this.state.pagerNumber} />
+                <ul className="pagination">
+                    <Pagination onChangeCurrentPage = {this.handleChangeCurrentPage} pagerNumber = {this.state.pagerNumber} />
+                </ul>
             </div>
         );
     }
@@ -52,12 +43,12 @@ class Posts extends Component {
     }
 
     handleChangeCurrentPage = (currentPage)=> {
-        console.log("currentPage", currentPage);
         this.setState({
             postsPagemarker: "page=" + currentPage
         });
 
         this.getNewData("page=" + currentPage);
+        window.history.pushState({postPageIndex: 'postPageIndex-'.currentPage}, "postPage", "?page=".currentPage);
     }
 
     getPagerNumber = (number) => {
